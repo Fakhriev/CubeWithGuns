@@ -47,7 +47,10 @@ public class Pawn_Shoot : MonoBehaviour
             myTossObject = collision.gameObject.GetComponent<Object_Tossable>();
 
             if (myTossObject.state != "Free")
+            {
+                myTossObject = null;
                 return;
+            }
 
             myTossObject.BallTaked(gameObject);
             TakeTossObject(myTossObject);
