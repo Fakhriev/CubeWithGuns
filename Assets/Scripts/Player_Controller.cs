@@ -62,12 +62,9 @@ public class Player_Controller : MonoBehaviour
 
     public void SetTheTarget(Transform _target) 
     {
-        if (myTarget == null)
-        {
-            myTarget = _target;
+        myTarget = _target;
+
+        if(myTarget != null)
             PlayerMesh.transform.LookAt(myTarget);
-        }
-        else
-            myTarget = null;
     }
 }

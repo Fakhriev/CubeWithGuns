@@ -22,7 +22,7 @@ public class Bullet_Movement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Target")
+        if (other.gameObject.name == "Target" || other.gameObject.tag == "Enemy")
             StartCoroutine(StopTimer());
     }
 

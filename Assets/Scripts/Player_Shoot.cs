@@ -13,7 +13,7 @@ public class Player_Shoot : MonoBehaviour
 
     private bool isCanShoot;
 
-    private void LateUpdate()
+    private void Update()
     {
         if (myTarget != null)
         {
@@ -39,7 +39,7 @@ public class Player_Shoot : MonoBehaviour
 
     public void SetTheTarget(Transform _target)
     {
-        if (myTarget == null)
+        if(myTarget == null)
         {
             myTarget = _target;
             gunHolder.LookAt(myTarget);
@@ -47,7 +47,7 @@ public class Player_Shoot : MonoBehaviour
         }
         else
         {
-            myTarget = null;
+            myTarget = _target;
         }
     }
 }
