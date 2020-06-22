@@ -5,9 +5,9 @@ using UnityEngine;
 public class Enemy_Movement : MonoBehaviour
 {
     public Rigidbody enemyRb;
-    public Transform playerTransform;
 
-    public bool isDead;
+    private Transform playerTransform;
+    private bool isDead;
 
     private void Start()
     {

@@ -43,6 +43,7 @@ public class Enemy_Health : MonoBehaviour
         enemyDeathParticle.transform.SetParent(null);
         enemyDeathParticle.SetActive(true);
 
+        Destroy(gameObject, 1.5f);
         gameObject.SetActive(false); //Временно
         //StartCoroutine(FalseActiveTimer());
     }

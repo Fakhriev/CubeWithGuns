@@ -15,10 +15,10 @@ public class Enemy_Spawner : MonoBehaviour
     public float minZ;
     public float maxZ;
 
-
     private void Start()
     {
         InvokeRepeating("SpawnEnemy", spawnTimer, spawnTimer);
+        StartCoroutine(CancelInvokeTimer());
     }
 
     private void SpawnEnemy()
@@ -28,5 +28,11 @@ public class Enemy_Spawner : MonoBehaviour
 
         Vector3 spawnPosition = new Vector3(xPosition, yPosition, zPosition);
         Instantiate(EnemyPrefab, spawnPosition, Quaternion.identity);
+    }
+
+    IEnumerator CancelInvokeTimer()
+    {
+        yield return new WaitForSeconds(10);
+        CancelInvoke();
     }
 }
