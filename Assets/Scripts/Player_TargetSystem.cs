@@ -15,7 +15,6 @@ public class Player_TargetSystem : MonoBehaviour
 
     private void SetTheTarget()
     {
-        //Player_Controller.currentTarget = target;
         Player_Controller.currentTarget = Player_Controller.currentTarget == null ? target : null;
     }
 }
