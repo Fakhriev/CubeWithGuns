@@ -10,9 +10,17 @@ public class Bullet_Movement : MonoBehaviour
     public float minStopTimer;
     public float maxStopTimer;
 
+    private GameObject hittedObject;
+
     private void Start()
     {
         Destroy(gameObject, 2);
+    }
+
+    private void Update()
+    {
+        if (hittedObject != null && !hittedObject.activeInHierarchy && gameObject.activeInHierarchy)
+            gameObject.SetActive(false);
     }
 
     private void FixedUpdate()
@@ -23,7 +31,10 @@ public class Bullet_Movement : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name == "Target" || other.gameObject.tag == "Enemy")
+        {
+            hittedObject = other.gameObject;
             StartCoroutine(StopTimer());
+        }
     }
 
     IEnumerator StopTimer()

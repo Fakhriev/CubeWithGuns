@@ -6,16 +6,12 @@ public class Player_TargetSystem : MonoBehaviour
 {
     public Player_Controller Player_Controller;
     public Player_Shoot Player_Shoot;
-    public Transform Target;
 
-    public Transform myTarget;
-    public List<Rigidbody> targetList = new List<Rigidbody>();
+    private Transform myTarget;
+    private List<Rigidbody> targetList = new List<Rigidbody>();
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-            SetTheTarget(Target);
-
         if(targetList.Count > 0)
         {
             for (int i = 0; i < targetList.Count; i++)//Если кто-то из врагов стал не Kinematick(Умер), то убрать его из таргетЛиста

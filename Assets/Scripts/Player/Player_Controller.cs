@@ -7,17 +7,17 @@ using UnityEngine.SceneManagement;
 public class Player_Controller : MonoBehaviour
 {
     public Rigidbody playerRB;
-    public Transform PlayerMesh;
-    public Transform playerMoveTransform;
+    public Transform upPart;
+    public Transform downPart;
 
     public VariableJoystick Joystick;
-    public Transform myTarget;
 
     public float walkSpeed;
     public float runSpeed;
     public float moveTypeAmountForJoystick;
 
     private float currentSpeed;
+    private Transform myTarget;
 
     private void Update()
     {
@@ -25,13 +25,13 @@ public class Player_Controller : MonoBehaviour
             RestartScene();
 
         if (myTarget != null)
-            PlayerMesh.transform.LookAt(myTarget);
+            upPart.transform.LookAt(myTarget);
         else
-            PlayerMesh.rotation = playerMoveTransform.rotation;
+            upPart.rotation = downPart.rotation;
 
         if (Joystick.Vertical != 0 || Joystick.Horizontal != 0)
         {
-            playerMoveTransform.transform.eulerAngles = new Vector3(0, Mathf.Atan2(Joystick.Vertical, Joystick.Horizontal) * -180 / Mathf.PI, 0);
+            downPart.transform.eulerAngles = new Vector3(0, Mathf.Atan2(Joystick.Vertical, Joystick.Horizontal) * -180 / Mathf.PI, 0);
 
             if (Mathf.Abs(Joystick.Vertical) < moveTypeAmountForJoystick && Mathf.Abs(Joystick.Horizontal) < moveTypeAmountForJoystick)
             {
@@ -51,7 +51,7 @@ public class Player_Controller : MonoBehaviour
 
     private void FixedUpdate()
     {
-        playerRB.MovePosition(transform.position + playerMoveTransform.forward * currentSpeed * Time.fixedDeltaTime);
+        playerRB.MovePosition(transform.position + downPart.forward * currentSpeed * Time.fixedDeltaTime);
     }
 
     private void RestartScene()
@@ -65,6 +65,6 @@ public class Player_Controller : MonoBehaviour
         myTarget = _target;
 
         if(myTarget != null)
-            PlayerMesh.transform.LookAt(myTarget);
+            upPart.transform.LookAt(myTarget);
     }
 }

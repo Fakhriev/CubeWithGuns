@@ -4,14 +4,18 @@ using UnityEngine;
 public class Player_Shoot : MonoBehaviour
 {
     public GameObject Bullet;
+    public float shootReloadTime;
 
     public Transform gunHolder;
     public Transform shootPosition;
 
-    public Transform myTarget;
-    public float shootReloadTime;
+    private Transform myTarget;
+    public bool isCanShoot;
 
-    private bool isCanShoot;
+    private void Start()
+    {
+        isCanShoot = true;
+    }
 
     private void Update()
     {
@@ -43,7 +47,9 @@ public class Player_Shoot : MonoBehaviour
         {
             myTarget = _target;
             gunHolder.LookAt(myTarget);
-            Shoot();
+
+            if(isCanShoot)
+                Shoot();
         }
         else
         {
