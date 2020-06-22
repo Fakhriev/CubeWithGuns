@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,7 +11,7 @@ public class Player_Controller : MonoBehaviour
     public Transform playerMoveTransform;
 
     public VariableJoystick Joystick;
-    public Transform currentTarget;
+    public Transform myTarget;
 
     public float walkSpeed;
     public float runSpeed;
@@ -23,14 +24,14 @@ public class Player_Controller : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
             RestartScene();
 
-        if(Joystick.Vertical != 0 || Joystick.Horizontal != 0)
+        if (myTarget != null)
+            PlayerMesh.transform.LookAt(myTarget);
+        else
+            PlayerMesh.rotation = playerMoveTransform.rotation;
+
+        if (Joystick.Vertical != 0 || Joystick.Horizontal != 0)
         {
             playerMoveTransform.transform.eulerAngles = new Vector3(0, Mathf.Atan2(Joystick.Vertical, Joystick.Horizontal) * -180 / Mathf.PI, 0);
-
-            if (currentTarget != null)
-                PlayerMesh.transform.LookAt(currentTarget);
-            else
-                PlayerMesh.rotation = playerMoveTransform.rotation;
 
             if (Mathf.Abs(Joystick.Vertical) < moveTypeAmountForJoystick && Mathf.Abs(Joystick.Horizontal) < moveTypeAmountForJoystick)
             {
@@ -57,5 +58,16 @@ public class Player_Controller : MonoBehaviour
     {
         Scene scene = SceneManager.GetActiveScene(); 
         SceneManager.LoadScene(scene.name);
+    }
+
+    public void SetTheTarget(Transform _target) 
+    {
+        if (myTarget == null)
+        {
+            myTarget = _target;
+            PlayerMesh.transform.LookAt(myTarget);
+        }
+        else
+            myTarget = null;
     }
 }

@@ -5,7 +5,10 @@ using UnityEngine;
 public class Player_TargetSystem : MonoBehaviour
 {
     public Player_Controller Player_Controller;
-    public Transform target;
+    public Player_Shoot Player_Shoot;
+    public Transform Target;
+
+    private Transform myTarget;
 
     private void Update()
     {
@@ -15,6 +18,8 @@ public class Player_TargetSystem : MonoBehaviour
 
     private void SetTheTarget()
     {
-        Player_Controller.currentTarget = Player_Controller.currentTarget == null ? target : null;
+        myTarget = Target;
+        Player_Controller.SetTheTarget(myTarget);
+        Player_Shoot.SetTheTarget(myTarget);
     }
 }
