@@ -3,10 +3,11 @@ using UnityEngine;
 
 public class Player_Shoot : MonoBehaviour
 {
+    public Transform gunHolder;
+    [SerializeField] private SphereCollider targetSphereCollider;
+
     public GameObject Bullet;
     public float shootReloadTime;
-
-    public Transform gunHolder;
     public Transform shootPosition;
 
     private Transform myTarget;
@@ -55,5 +56,16 @@ public class Player_Shoot : MonoBehaviour
         {
             myTarget = _target;
         }
+    }
+
+    public Transform NewWeaponEquipped(GameObject _Bullet, float _shootReloadTime, Transform _shootPosition, float _range)
+    {
+        Bullet = _Bullet;
+        shootReloadTime = _shootReloadTime;
+        shootPosition = _shootPosition;
+
+        targetSphereCollider.radius = 7.5f + _range;
+
+        return gunHolder;
     }
 }
