@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bullet_Patron : Bullet
 {
+    [SerializeField] private GameObject shootPatronParticle;
     [SerializeField] private float minStopTimer;
     [SerializeField] private float maxStopTimer;
 
@@ -13,6 +14,7 @@ public class Bullet_Patron : Bullet
     private void Start()
     {
         StartCoroutine(DestoyTimer());
+        shootPatronParticle.SetActive(true);
     }
 
     private void Update()

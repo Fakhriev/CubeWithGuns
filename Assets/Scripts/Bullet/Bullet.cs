@@ -34,6 +34,7 @@ public class Bullet : MonoBehaviour
             return;
         }
 
-        Instantiate(hitEffect, transform.position, Quaternion.identity);
+        GameObject _hitEffect = Instantiate(hitEffect, transform.position, Quaternion.Euler(0, 180, 0));
+        Destroy(_hitEffect, 1);
     }
 }

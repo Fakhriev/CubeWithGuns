@@ -5,7 +5,6 @@ using UnityEngine;
 public class Laser_Bullet : Bullet
 {
     [SerializeField] private GameObject mesh;
-    [SerializeField] private GameObject track;
     [SerializeField] private int maxPenetrationNumber;
 
     private int penetrationNumber;
@@ -13,7 +12,7 @@ public class Laser_Bullet : Bullet
     private void Start()
     {
         float lifeTime = Random.Range(2, 5);
-        //Destroy(gameObject, lifeTime);
+        Destroy(gameObject, lifeTime);
     }
 
     private void OnTriggerEnter(Collider other)

@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3025352315023050721}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2.544}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3835457136293094331}
@@ -79,9 +79,9 @@ MonoBehaviour:
   bulletRb: {fileID: 3025352315023050732}
   speed: 55
   damage: 3
-  hitEffect: {fileID: 0}
+  hitEffect: {fileID: 1550984351617321017, guid: 4bf16f19457e9024fa2b2ed608a05329,
+    type: 3}
   mesh: {fileID: 3833513625286785113}
-  track: {fileID: 0}
   maxPenetrationNumber: 3
 --- !u!96 &2057214409309573204
 TrailRenderer:
@@ -102,7 +102,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 125544cbb97615848a5d285350b798fd, type: 2}
+  - {fileID: 2100000, guid: 918cab7a2574d6c4ba7ae6171240559e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
