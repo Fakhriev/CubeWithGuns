@@ -6,6 +6,7 @@ public class Player_TargetSystem : MonoBehaviour
 {
     public Player_Controller Player_Controller;
     public Player_Shoot Player_Shoot;
+    public Transform targetCircle;
 
     private Transform myTarget;
     private List<Rigidbody> targetList = new List<Rigidbody>();
@@ -14,9 +15,11 @@ public class Player_TargetSystem : MonoBehaviour
     {
         if(targetList.Count > 0)
         {
-            for (int i = 0; i < targetList.Count; i++)//Если кто-то из врагов стал не Kinematick(Умер), то убрать его из таргетЛиста
+            targetCircle.position = targetList[0].position;
+
+            for (int i = 0; i < targetList.Count; i++)//Если кто-то из врагов стал Kinematick(Умер), то убрать его из таргетЛиста
             {
-                if (targetList[i].isKinematic == false)
+                if (targetList[i].isKinematic == true)
                 {
                     targetList.RemoveAt(i);
 
@@ -24,7 +27,10 @@ public class Player_TargetSystem : MonoBehaviour
                         SetTheTarget(targetList[0].transform);
 
                     if (targetList.Count == 0)
+                    {
                         SetTheTarget(null);
+                        targetCircle.gameObject.SetActive(false);
+                    }
 
                     break;
                 }
@@ -62,6 +68,7 @@ public class Player_TargetSystem : MonoBehaviour
                     SetTheTarget(other.transform);
 
                 targetList.Add(other.attachedRigidbody);
+                targetCircle.gameObject.SetActive(true);
             }   
         }
     }
@@ -78,7 +85,10 @@ public class Player_TargetSystem : MonoBehaviour
                     SetTheTarget(targetList[0].transform);
 
                 if (targetList.Count == 0)
+                {
                     SetTheTarget(null);
+                    targetCircle.gameObject.SetActive(false);
+                }
             }
         }
     }

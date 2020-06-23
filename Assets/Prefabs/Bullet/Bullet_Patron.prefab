@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3025352315023050733}
   - component: {fileID: 3025352315023050732}
   - component: {fileID: 3025352315023050735}
-  - component: {fileID: 3025352315023050734}
+  - component: {fileID: 2522373765958736821}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: Bullet_Patron
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3025352315023050721}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2.544}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3835457136293094331}
@@ -63,7 +63,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.45, y: 0.45, z: 1.25}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3025352315023050734
+--- !u!114 &2522373765958736821
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72,11 +72,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3025352315023050721}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d1c781aeba942f4c92dc5eaf541d3da, type: 3}
+  m_Script: {fileID: 11500000, guid: 71419e1b016f23f4ea42769babed1fbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletRb: {fileID: 3025352315023050732}
   speed: 25
+  damage: 1
+  hitEffect: {fileID: 0}
+  shootPatronParticle: {fileID: 0}
   minStopTimer: 0.025
   maxStopTimer: 0.075
 --- !u!1 &3833513625286785113
