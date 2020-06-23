@@ -19,23 +19,17 @@ public class Enemy_Movement : MonoBehaviour
         if (isDead)
             return;
 
-        if(!enemyRb.isKinematic && transform.position.y <= 0.5f)
-        {
-            LandToGround();
-        }
-
         transform.LookAt(playerTransform);
     }
 
     private void LandToGround()
     {
         transform.position = new Vector3(transform.position.x, 0, transform.position.z);
-        enemyRb.isKinematic = true;
     }
 
     public void Death()
     {
         isDead = true;
-        enemyRb.isKinematic = false;
+        enemyRb.isKinematic = true;
     }
 }

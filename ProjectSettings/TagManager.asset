@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Tossable
   - Bullet
+  - NoHit
   layers:
   - Default
   - TransparentFX
