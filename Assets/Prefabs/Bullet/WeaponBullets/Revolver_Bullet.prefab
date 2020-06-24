@@ -162,7 +162,7 @@ MonoBehaviour:
     type: 3}
   shootPatronParticle: {fileID: 1533330391300753386}
   minStopTimer: 0.015
-  maxStopTimer: 0.05
+  maxStopTimer: 0.02
   pushForce: 4
 --- !u!1001 &3772075185684804641
 PrefabInstance:

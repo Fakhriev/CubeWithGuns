@@ -18,7 +18,7 @@ public class Enemy_Spawner : MonoBehaviour
     private void Start()
     {
         InvokeRepeating("SpawnEnemy", spawnTimer, spawnTimer);
-        StartCoroutine(CancelInvokeTimer());
+        //StartCoroutine(CancelInvokeTimer());
     }
 
     private void SpawnEnemy()
