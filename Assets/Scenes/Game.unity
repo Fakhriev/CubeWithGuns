@@ -10840,6 +10840,7 @@ MonoBehaviour:
   - {fileID: 1611145890473047229, guid: 208884d1c453e3a448bc1c6b240be76a, type: 3}
   - {fileID: 4923706594523084087, guid: 7f05b7bf06a3f0344b18eecd6d6a034b, type: 3}
   - {fileID: 3817850432203842161, guid: 2328d4894bf9f244baac3b680f1941ec, type: 3}
+  btn_ChangeWeapon: {fileID: 0}
   weaponIndex: 0
 --- !u!4 &1232848154
 Transform:
@@ -24312,17 +24313,17 @@ PrefabInstance:
     - target: {fileID: 3881087803549984436, guid: ec536a7718376554185e4a856d5ae230,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.66666996
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3881087803549984436, guid: ec536a7718376554185e4a856d5ae230,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.66666996
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3881087803549984436, guid: ec536a7718376554185e4a856d5ae230,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.66666996
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3881087803549984437, guid: ec536a7718376554185e4a856d5ae230,
         type: 3}
@@ -24459,10 +24460,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1080, y: 1920}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

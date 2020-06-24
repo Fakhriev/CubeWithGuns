@@ -1,17 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponChanger : MonoBehaviour
 {
     [SerializeField] private Player_Shoot Player_Shoot;
     [SerializeField] private GameObject[] weaponPrefabsArray = new GameObject[0];
+    [SerializeField] private Button btn_ChangeWeapon;
 
     public int weaponIndex;
     private GameObject oldWeapon;
 
     private void Start()
     {
+        btn_ChangeWeapon.onClick.AddListener(ChangeWeapon);
         ChangeWeapon();   
     }
 
