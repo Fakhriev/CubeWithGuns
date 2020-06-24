@@ -79,7 +79,8 @@ MonoBehaviour:
   bulletRb: {fileID: 3025352315023050732}
   speed: 35
   damage: 2
-  hitEffect: {fileID: 0}
+  hitEffect: {fileID: 1550984351617321017, guid: 4bf16f19457e9024fa2b2ed608a05329,
+    type: 3}
   shootPatronParticle: {fileID: 4047130225871946325}
   minStopTimer: 0.035
   maxStopTimer: 0.045
