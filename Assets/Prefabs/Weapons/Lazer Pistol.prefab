@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5211274589917519605}
   - component: {fileID: 5211274589917519604}
   m_Layer: 0
-  m_Name: Lazer_Pistol
+  m_Name: Lazer Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,6 +48,7 @@ MonoBehaviour:
   bullet: {fileID: 6687514884682951160, guid: ec83f49e072a0074c9e6bc8869950962, type: 3}
   shootReloadTime: 0.5
   shootPosition: {fileID: 5211274591612182055}
+  shootRange: 0
 --- !u!1 &5211274590210255564
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,7 +344,7 @@ Transform:
   m_GameObject: {fileID: 5211274591808411081}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 5211274590516628086}
   - {fileID: 5211274590210255567}

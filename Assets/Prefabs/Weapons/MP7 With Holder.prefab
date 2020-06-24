@@ -264,7 +264,7 @@ Transform:
   m_GameObject: {fileID: 4558673465592974940}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4558673465518559659}
   - {fileID: 4558673465083680499}
@@ -489,7 +489,7 @@ GameObject:
   - component: {fileID: 4558673466446643557}
   - component: {fileID: 4558673466446643558}
   m_Layer: 0
-  m_Name: MP7_WithHolder
+  m_Name: MP7 With Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
