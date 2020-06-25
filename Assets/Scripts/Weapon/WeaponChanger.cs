@@ -7,27 +7,41 @@ public class WeaponChanger : MonoBehaviour
 {
     [SerializeField] private Player_Shoot Player_Shoot;
     [SerializeField] private GameObject[] weaponPrefabsArray = new GameObject[0];
-    [SerializeField] private Button btn_ChangeWeapon;
+    [SerializeField] private GameObject[] weaponStats = new GameObject[0];
+
+    [SerializeField] private Button btn_WeaponRight;
+    [SerializeField] private Button btn_WeaponLeft;
 
     public int weaponIndex;
     private GameObject oldWeapon;
+    private GameObject oldWeaponStat;
 
     private void Start()
     {
-        btn_ChangeWeapon.onClick.AddListener(ChangeWeapon);
-        ChangeWeapon();   
+        btn_WeaponRight.onClick.AddListener(ChangeWeaponRight);
+        btn_WeaponLeft.onClick.AddListener(ChangeWeaponLeft);
+
+        weaponIndex = -1;
+        ChangeWeapon(1);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.X))
-            ChangeWeapon();
-    }
-
-    private void ChangeWeapon()
+    private void ChangeWeapon(int side)
     {
         if(oldWeapon != null)
+        {
             Destroy(oldWeapon);
+            oldWeaponStat.SetActive(false);
+        }
+
+        weaponIndex += side;
+
+        if (weaponIndex == -1)
+            weaponIndex = weaponPrefabsArray.Length - 1;
+
+        if (weaponIndex == weaponPrefabsArray.Length)
+            weaponIndex = 0;
+
+        weaponStats[weaponIndex].SetActive(true);
 
         GameObject newWeapon = Instantiate(weaponPrefabsArray[weaponIndex], transform.position, Quaternion.identity);
         Weapon weaponComponent = newWeapon.GetComponent<Weapon>();
@@ -43,16 +57,20 @@ public class WeaponChanger : MonoBehaviour
         newWeapon.transform.position = gunHolder.position;
         newWeapon.transform.SetParent(gunHolder);
 
-        weaponIndex++;
         oldWeapon = newWeapon;
+        oldWeaponStat = weaponStats[weaponIndex];
 
         if (weaponIndex == weaponPrefabsArray.Length)
             weaponIndex = 0;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void ChangeWeaponRight()
     {
-        if (other.gameObject.tag == "Player")
-            ChangeWeapon();
+        ChangeWeapon(1);
+    }
+
+    private void ChangeWeaponLeft()
+    {
+        ChangeWeapon(-1);
     }
 }
