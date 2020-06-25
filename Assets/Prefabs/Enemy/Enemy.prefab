@@ -77,10 +77,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4857f673294b27541b000e0e239de88b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy_Movement: {fileID: 8819931297891521423}
   enemyMesh: {fileID: 5473964644497295565}
   enemyDeathParticle: {fileID: 6800269941547573620}
-  falseActiveTime: 1.5
+  Enemy_Movement: {fileID: 8819931297891521423}
   health: 6
 --- !u!114 &8819931297891521423
 MonoBehaviour:
@@ -95,8 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyRb: {fileID: 1779114251982540822}
-  playerTransform: {fileID: 0}
-  isDead: 0
+  speed: 4
 --- !u!1 &5473964644497295565
 GameObject:
   m_ObjectHideFlags: 0

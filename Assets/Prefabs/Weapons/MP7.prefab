@@ -558,3 +558,4 @@ MonoBehaviour:
   shootReloadTime: 0.3
   shootPosition: {fileID: 4847483904913046781}
   shootRange: 0
+  shootClip: {fileID: 8300000, guid: cecfe963ebe557744ad7a6e53f8309e6, type: 3}

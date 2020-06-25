@@ -17,7 +17,9 @@ public class Tree_Growth : MonoBehaviour
 
     IEnumerator GrowthTimer()
     {
-        yield return new WaitForSeconds(growthTime);
+
+        float time = Random.Range(growthTime - 10, growthTime + 10);
+        yield return new WaitForSeconds(time);
         meshIndex++;
         meshFilter.mesh = treeMesh[meshIndex];
 
