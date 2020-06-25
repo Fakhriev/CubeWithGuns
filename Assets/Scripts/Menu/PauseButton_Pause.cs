@@ -43,7 +43,7 @@ public class PauseButton_Pause : MonoBehaviour
         joyStick.SetActive(true);
     }
 
-    private void OpenMenu()
+    public void OpenMenu()
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("Menuu");

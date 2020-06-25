@@ -40,6 +40,7 @@ public class Enemy_Health : MonoBehaviour
 
     private void Death()
     {
+        Enemy_DeathCount.EnemyDeath();
         enemyMesh.SetActive(false);
 
         enemyDeathParticle.transform.SetParent(null);

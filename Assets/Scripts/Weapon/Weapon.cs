@@ -8,6 +8,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float shootReloadTime;
     [SerializeField] private Transform shootPosition;
     [SerializeField] private float shootRange;
+    [SerializeField] private AudioClip shootClip;
 
     public GameObject GetBullet()
     {
@@ -27,5 +28,10 @@ public class Weapon : MonoBehaviour
     public float GetShootRange()
     {
         return shootRange;
+    }
+
+    public AudioClip GetShootSound()
+    {
+        return shootClip;
     }
 }

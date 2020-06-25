@@ -12,6 +12,9 @@ public class WeaponChanger : MonoBehaviour
     [SerializeField] private Button btn_WeaponRight;
     [SerializeField] private Button btn_WeaponLeft;
 
+    [SerializeField] private Player_Menu_Animator Player_Animator;
+    [SerializeField] private AudioClip simpleClip;
+
     public int weaponIndex;
     private GameObject oldWeapon;
     private GameObject oldWeaponStat;
@@ -60,7 +63,7 @@ public class WeaponChanger : MonoBehaviour
         Transform shootPosition = weaponComponent.GetShootPosition();
         float range = weaponComponent.GetShootRange();
 
-        Transform gunHolder = Player_Shoot.NewWeaponEquipped(bullet, shootReloadTime, shootPosition, range);
+        Transform gunHolder = Player_Shoot.NewWeaponEquipped(bullet, shootReloadTime, shootPosition, range, null);
 
         newWeapon.transform.rotation = gunHolder.rotation;
         newWeapon.transform.position = gunHolder.position;
@@ -68,6 +71,8 @@ public class WeaponChanger : MonoBehaviour
 
         oldWeapon = newWeapon;
         oldWeaponStat = weaponStats[weaponIndex];
+
+        Player_Animator.SpinRandomAnimation();
         PlayerPrefs.SetInt("Weapon", weaponIndex);
 
         if (weaponIndex == weaponPrefabsArray.Length)

@@ -23,8 +23,9 @@ public class WeaponEquiper : MonoBehaviour
         float shootReloadTime = weaponComponent.GetShootReloadTime();
         Transform shootPosition = weaponComponent.GetShootPosition();
         float range = weaponComponent.GetShootRange();
+        AudioClip clip = weaponComponent.GetShootSound();
 
-        Transform gunHolder = Player_Shoot.NewWeaponEquipped(bullet, shootReloadTime, shootPosition, range);
+        Transform gunHolder = Player_Shoot.NewWeaponEquipped(bullet, shootReloadTime, shootPosition, range, clip);
 
         newWeapon.transform.rotation = gunHolder.rotation;
         newWeapon.transform.position = gunHolder.position;

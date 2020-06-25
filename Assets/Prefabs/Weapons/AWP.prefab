@@ -128,6 +128,7 @@ MonoBehaviour:
   shootReloadTime: 1.5
   shootPosition: {fileID: 6697807652977359875}
   shootRange: 5
+  shootClip: {fileID: 8300000, guid: d73c861ad57084643808d3e27fb04262, type: 3}
 --- !u!1 &6392565574498083821
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,6 +20,7 @@ public class Player_Health : MonoBehaviour
 
     [SerializeField] private GameObject btn_Pause;
     [SerializeField] private GameObject JoyStick;
+    [SerializeField] private GameObject currentTextScore;
     [SerializeField] private GameObject restartThings;
 
     private bool isDead;
@@ -60,7 +61,10 @@ public class Player_Health : MonoBehaviour
 
         JoyStick.SetActive(false);
         btn_Pause.SetActive(false);
+        currentTextScore.SetActive(false);
+
         restartThings.SetActive(true);
+        Enemy_DeathCount.SetupCount();
     }
 
     IEnumerator CantBeDamagedTimer()

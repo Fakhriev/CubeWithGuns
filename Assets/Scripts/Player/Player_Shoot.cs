@@ -5,6 +5,7 @@ public class Player_Shoot : MonoBehaviour
 {
     public Transform gunHolder;
     [SerializeField] private SphereCollider targetSphereCollider;
+    [SerializeField] private AudioSource audioSource;
 
     public GameObject Bullet;
     public float shootReloadTime;
@@ -39,6 +40,7 @@ public class Player_Shoot : MonoBehaviour
     {
         Instantiate(Bullet, shootPosition.position, shootPosition.rotation);
         isCanShoot = false;
+        audioSource.Play();
         StartCoroutine(Reload());
     }
 
@@ -58,11 +60,12 @@ public class Player_Shoot : MonoBehaviour
         }
     }
 
-    public Transform NewWeaponEquipped(GameObject _Bullet, float _shootReloadTime, Transform _shootPosition, float _range)
+    public Transform NewWeaponEquipped(GameObject _Bullet, float _shootReloadTime, Transform _shootPosition, float _range, AudioClip _shootClip)
     {
         Bullet = _Bullet;
         shootReloadTime = _shootReloadTime;
         shootPosition = _shootPosition;
+        audioSource.clip = _shootClip;
 
         targetSphereCollider.radius = 7.5f + _range;
 

@@ -33,4 +33,23 @@ public class Player_Menu_Animator : MonoBehaviour
     {
         Animator.SetTrigger("Spin1");
     }
+
+    public void SpinRandomAnimation()
+    {
+        int rnd = Random.Range(0, 10);
+
+        if(rnd == 9)
+        {
+            int anim = Random.Range(0, 3);
+
+            if (anim == 0)
+                Look1();
+
+            if (anim == 1)
+                Look2();
+
+            if (anim == 2)
+                Spin1();
+        }
+    }
 }
