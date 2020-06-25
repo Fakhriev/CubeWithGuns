@@ -13,7 +13,6 @@ public class Player_Menu_CameraRotator : MonoBehaviour
 
     private void Start()
     {
-        return;
         StartCoroutine(RotationStartTimer());
     }
 

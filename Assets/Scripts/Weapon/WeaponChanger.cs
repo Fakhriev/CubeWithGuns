@@ -21,7 +21,16 @@ public class WeaponChanger : MonoBehaviour
         btn_WeaponRight.onClick.AddListener(ChangeWeaponRight);
         btn_WeaponLeft.onClick.AddListener(ChangeWeaponLeft);
 
-        weaponIndex = -1;
+        if (PlayerPrefs.HasKey("Weapon"))
+        {
+            weaponIndex = PlayerPrefs.GetInt("Weapon");
+            weaponIndex--;
+        }
+        else
+        {
+            weaponIndex = -1;
+        }
+
         ChangeWeapon(1);
     }
 
@@ -59,6 +68,7 @@ public class WeaponChanger : MonoBehaviour
 
         oldWeapon = newWeapon;
         oldWeaponStat = weaponStats[weaponIndex];
+        PlayerPrefs.SetInt("Weapon", weaponIndex);
 
         if (weaponIndex == weaponPrefabsArray.Length)
             weaponIndex = 0;
