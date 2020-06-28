@@ -161,8 +161,8 @@ MonoBehaviour:
   hitEffect: {fileID: 1550984351617321017, guid: 4bf16f19457e9024fa2b2ed608a05329,
     type: 3}
   shootPatronParticle: {fileID: 8070693372027361918}
-  minStopTimer: 0.025
-  maxStopTimer: 0.035
+  minStopTimer: 0.01
+  maxStopTimer: 0.02
   pushForce: 1
 --- !u!1001 &5845317604084705717
 PrefabInstance:

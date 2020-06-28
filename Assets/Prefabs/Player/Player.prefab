@@ -281,7 +281,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9987a71f71641934fac28f7eb4a178d8, type: 2}
+  - {fileID: 2100000, guid: 6513a233868794d46a54a17bb7f137b4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -513,6 +513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunHolder: {fileID: 6503114093386795006}
   targetSphereCollider: {fileID: 6503114094996166375}
+  audioSource: {fileID: 0}
   Bullet: {fileID: 3025352315023050721, guid: ff226d8ec855aa5419f92f8e978430f4, type: 3}
   shootReloadTime: 1
   shootPosition: {fileID: 0}
